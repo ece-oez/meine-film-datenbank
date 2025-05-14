@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lieblings Filme Liste</title>
+    <link rel="stylesheet" href="styles/index.css">
+    <script src="js/index.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Show Error Layout -->
+    <div id="overlay"></div>
+    <div id="modal">
+        <div class="flex-container">
+            <h3 id="fehler-header">Fehler</h3>
+            <h5 id="fehler-message">message</h5>
+            <button class="w-100" id="modal-btn">OK</button>
+        </div>
+    </div>
+
+        <!-- Heading -->
+        <h1>Was ist dein Lieblingsfilm: </h1>
+
+    <div class="flex-container" style="flex-direction: row" >
+
+
+        <div class="flex-container w-75">
+
+            <!-- Input Fields -->
+            <input id="titel" type="text" placeholder="Titel">
+
+            <select name="FSK" id="fsk">
+                <option value="" disabled selected>Altersfreigabe</option>  <!-- Placeholder options -->
+                <option value="0">0</option>
+                <option value="6">6</option>
+                <option value="12">12</option>
+                <option value="16">16</option>
+                <option value="18">18</option>
+            </select>
+
+            <input id="jahr" type="number" placeholder="Erscheinungsjahr">
+
+            <div class="flex-container w-100" id="row-container">
+                <select class="w-100" name="genres" id="genre1">
+                    <option value="" disabled selected>Genre 1</option> <!-- Placeholder options -->
+                    <!-- genre list -> look at data/genre.json -->
+                </select>
+
+                <select class="w-100" name="genres" id="genre2">
+                    <option value="" disabled selected>Genre 2</option> <!-- Placeholder options -->
+                    <!-- genre list -> look at data/genre.json -->
+                </select>
+
+                <select class="w-100" name="genres" id="genre3">
+                    <option value="" disabled selected>Genre 3</option> <!-- Placeholder options -->
+                    <!-- genre list -> look at data/genre.json -->
+                </select>
+            </div>
+
+            <input id="länge" type="number" placeholder="Filmlänge (in Minuten)">
+
+            <input id="file" type="file" accept=".png, .jpg">
+
+            <!-- <br> -->
+
+            <!-- buttons -->
+            <div class="flex-container w-100" id="row-container">
+                <button class="btn-background-blue w-100" id="search-btn">Suche</button>
+                <button class="btn-background-blue w-100" id="submit-btn">Anlegen</button>
+                <button class="w-100" id="edit-btn">Bearbeiten</button>
+                <button class="w-100" id="delete-btn">Löschen</button>
+            </div>
+
+        </div>
+
+        <div id="list-sheet">
+
+            <table>
+               <thead>
+                <tr>
+                    <th>Id</th>
+                    <!-- <td></td> -->
+                    <th>Titel</th>
+                    <!-- <td></td> -->
+                    <th><img src="styles/img/load-icon.png" alt="load" id="load-icon"></th>
+                </tr>
+               </thead>
+               <tbody id="filme-liste">
+
+               </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

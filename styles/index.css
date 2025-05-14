@@ -1,0 +1,275 @@
+html{
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.1), rgba(4, 9, 30, 10)), url(img/kino.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: none;
+    gap: 10px;
+    width: 90%;
+}
+
+#row-container {
+    flex-direction: row;
+}
+
+h1 {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 50px;
+    transition: 0.6s;
+}
+
+input, select {
+    font-size: 1.5em;
+    font-family: 'Open Sans', sans-serif;
+    padding: 18px 35px;
+    font-weight: 300;
+    color: grey;
+    background-color: #eeeeee;
+    border-radius: 5px;
+    transition: 0.2;
+    border: none;
+}
+
+*:focus {
+    outline: none;
+}
+
+input:hover {
+    background-color: #def2b3;
+}
+
+select:hover {
+    background-color: #def2b3;
+}
+
+button {
+    font-family: 'Open Sans', sans-serif;
+    color: grey;
+    padding: 20px 0px 20px 0px;
+    text-align: center;
+    font-size: 100%;
+    border: none;
+    transition: 0.3s;
+    align-self: center;
+}
+
+.btn-background-blue{
+    background-color: #0F6BB1;
+    color: white;
+}
+
+.btn-background-blue:hover{
+    background-color: rgb(70, 169, 255);
+    color: white;
+}
+
+.btn-background-blue:active{
+    background-color: #0B4769;
+    color: white;
+}
+
+.delete-btn-background {
+    background-color: red;
+    color: white;
+}
+
+.delete-btn-background:hover {
+    background-color: rgb(255, 134, 134);
+    color: white;
+}
+
+.delete-btn-background:active {
+    background-color: rgb(114, 0, 0);
+    color: white;
+}
+
+/* ------------------ (Error) modal + overlay ------------------ */
+
+#modal{
+    display: none;
+    position: absolute;
+    width: 800px;
+    height: fit-content;
+    background-color: rgba(255, 255, 255, 0.99);
+    border-radius: 10px;
+    color: black;
+}
+
+#fehler-header{
+    font-size: 50px;
+}
+
+#fehler-message{
+    font-size: 30px;
+}
+
+#overlay{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+/* ------------------ modal buttons ------------------ */
+
+.btn-modal-success{
+    background-color: rgb(70, 169, 255);
+    color: white;
+}
+
+.btn-modal-success:hover{
+    background-color: rgb(167, 242, 255);
+    color: grey;
+}
+
+.btn-modal-success:active{
+    background-color: rgb(68, 160, 54);
+    color: white;
+}
+
+.btn-modal-error{
+    background-color: rgb(182, 180, 180);
+    color: white;
+}
+
+.btn-modal-error:hover{
+    background-color: rgb(255, 93, 93);
+}
+
+.btn-modal-error:active{
+    background-color: rgb(65, 21, 21);
+}
+
+
+#list-sheet{
+    width: 40%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+}
+
+
+/* ------------------ Width classes ------------------ */
+
+.w-100 {
+    width: 100%;
+}
+
+.w-75 {
+    width: 75%;
+}
+
+.w-50 {
+    width: 50%;
+}
+
+.w-25 {
+    width: 25%;
+}
+
+.w-33 {
+    width: 33.33%;
+}
+
+/* ------------------ file input field: disable "Datei wählen" button ------------------ */
+
+input::file-selector-button{
+    display: none;
+}
+
+/* ------------------ invalid input classList.add (js) ------------------ */
+
+.input-invalid{
+    background-color: rgb(255, 156, 156);
+}
+
+/* ------------------ Remove ARROWS in number input html ------------------ */
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+/* input[type=number] {
+  -moz-appearance: textfield;
+} */
+
+/* ------------------ on phone ------------------ */
+
+@media only screen and (max-width: 600px) {
+    /* For mobile phones: */
+
+    h1 {
+        font-size: 30px;
+    }
+
+    input, select {
+        font-size: 0.8em;
+        font-weight: 30;
+    } 
+    
+    button {
+        padding: 10px 30px;
+        font-size: 20px;
+    }
+}
+
+.movie-entry:hover{
+    background-color: rgba(180, 0, 0, 0.95)
+}
+
+.movie-entry{
+    cursor: default;
+    text-align: left;
+
+}
+
+tbody tr td:first-child{
+    width: 10%;
+    text-align: center;
+}
+
+td{
+    padding: 6px;
+    width: 100%
+}
+
+#load-row{
+    width: 0px;
+}
+
+#load-icon{
+    display: none;
+    width: 30px;
+    height: 30px;
+    transition: 1s;
+}
+
+#load-icon:hover{
+    transform: rotate(180deg);
+}
