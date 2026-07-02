@@ -9,7 +9,7 @@ The goal of this project is not only to build a movie database but also to pract
 - [x] Dockerize PHP backend
 - [x] Dockerize MariaDB
 - [x] Establish database connection
-- [ ] Build REST API
+- [x] Build REST API
 - [ ] Migrate frontend to React + TypeScript
 - [ ] Add Playwright end-to-end tests
 - [ ] Set up GitHub Actions
@@ -62,22 +62,45 @@ filmdb/
 
 ## ⚙️ Getting Started
 
-Clone the repository
+1. Install Docker Desktop
 
-```bash
-git clone <repository-url>
+    [Docker Installation Guide](https://docs.docker.com/engine/install/fedora/)
+
+2. Clone the repository
+
+    ```bash
+    git clone <repository-url>
+    ```
+
+3. Start the application
+
+    ```bash
+    docker compose up --build
+    ```
+
+## 📱 Application
+
+### The Frontend application will be available at:
+
+```
+Frontend: http://localhost:8080
 ```
 
-Start the application
-
-```bash
-docker compose up --build
-```
-
-The application will be available at
+### The Backend application will be available at:
 
 ```
 http://localhost:8080
+```
+
+### The phpMyAdmin Dashboard will be available at:
+```
+http://localhost:8081
+```
+
+### To test the Database connection:
+
+```
+http://localhost:8080/db-test.php
 ```
 
 ---
