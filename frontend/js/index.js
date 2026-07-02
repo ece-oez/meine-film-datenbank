@@ -159,7 +159,7 @@ async function SpeichereFilm() {
 
     let jsn = JSON.stringify(obj);
 
-    let response = await fetch('http://localhost//MFDB/add_movie.php', {
+    let response = await fetch('http://localhost:8080/api/movies.php', {
         "method": 'POST',
         "headers": {
             'Accept': 'application/json'
@@ -180,8 +180,8 @@ async function SpeichereFilm() {
 
 async function sucheFilm() {
 
-    let response = await fetch('http://localhost/mfdb/get_movies.php', {
-        "method": 'POST',
+    let response = await fetch('http://localhost:8080/api/movies.php', {
+        "method": 'GET',
         "headers": {
             'Accept': 'application/json'
         },
@@ -241,8 +241,8 @@ async function loescheFilm() {
 
     let jsn = JSON.stringify(obj);
 
-    let response = await fetch('http://localhost//MFDB/delete_movie.php', {
-        "method": 'POST',
+    let response = await fetch('http://localhost:8080/api/movies.php', {
+        "method": 'DELETE',
         "headers": {
             'Accept': 'application/json'
         },
@@ -299,8 +299,8 @@ async function updateFilmeDB() {
 
     let jsn = JSON.stringify(obj);
 
-    let response = await fetch('http://localhost//MFDB/update_movie.php', {
-        "method": 'POST',
+    let response = await fetch('http://localhost:8080/api/movies.php', {
+        "method": 'PUT',
         "headers": {
             'Accept': 'application/json'
         },
