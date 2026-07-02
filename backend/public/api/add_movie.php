@@ -21,7 +21,11 @@ if($_SERVER['REQUEST_METHOD'] !== 'POST'){
 $data = file_get_contents('php://input');  // Json string (obj = daten)
 $parsed = json_decode($data, true);
 
-$pdo = new PDO("mysql:host=localhost;dbname=mfdb", 'eceoezmen', 'eceece');
+$pdo = $pdo = new PDO(
+    "mysql:host=mariadb;dbname=filmdb;charset=utf8",
+    "filmdb",
+    "secret"
+);
 
 $sql = "SELECT count(*) FROM `filme` WHERE Titel = :titel"; // SQL statement 
 $statement = $pdo->prepare($sql);  // Datenbank verbindung (siehe oben)

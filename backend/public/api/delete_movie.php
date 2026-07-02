@@ -14,7 +14,11 @@ $parsed = json_decode($data, true);
 
 // DB-Verbindung
 
-$pdo = new PDO("mysql:host=localhost;dbname=mfdb", 'eceoezmen', 'eceece');
+$pdo = $pdo = new PDO(
+    "mysql:host=mariadb;dbname=filmdb;charset=utf8",
+    "filmdb",
+    "secret"
+);
 
 $sql = "DELETE FROM filme WHERE FilmeId=?";
 

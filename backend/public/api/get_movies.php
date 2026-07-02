@@ -14,7 +14,11 @@ if($_SERVER['REQUEST_METHOD'] !== 'POST'){
 
 // DB-Verbindung
 
-$pdo = new PDO("mysql:host=localhost;dbname=mfdb", 'eceoezmen', 'eceece');
+$pdo = new PDO(
+    "mysql:host=mariadb;dbname=filmdb;charset=utf8",
+    "filmdb",
+    "secret"
+);
 
 // SQL-Statement zusammenbauen mit parameter bindung und sanatization
 

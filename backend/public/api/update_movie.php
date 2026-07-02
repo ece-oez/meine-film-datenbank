@@ -59,6 +59,7 @@ if($errorMessage !== ''){
 
 $pdo = new PDO("mysql:host=localhost;dbname=mfdb", 'eceoezmen', 'eceece');
 
+
 $sql = 'UPDATE filme SET Titel=?, Altersfreigabe=?, Erscheinungsjahr=?, Genre1=?, Genre2=?, Genre3=?, Filmlaenge=?, File=? WHERE FilmeId=?';
 
 $statement = $pdo->prepare($sql);

@@ -1,6 +1,10 @@
 <?php
 
-$pdo = new PDO("mysql:host=localhost;dbname=mfdb", 'eceoezmen', 'eceece');
+$pdo = new PDO(
+    "mysql:host=mariadb;dbname=filmdb;charset=utf8",
+    "filmdb",
+    "secret"
+);
 
 $pdo->setAttribute(pdo::MYSQL_ATTR_USE_BUFFERED_QUERY, false);
 
