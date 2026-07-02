@@ -1,29 +1,23 @@
--- Datenbank in SQL (MyAdmin erstellen)
+CREATE DATABASE IF NOT EXISTS filmdb;
 
--- benutzer Konto anlegen in MyAdmin
--- Datenbank erstellt
--- Tabellen 'filme' und 'genres' erstellen
-
-CREATE DATABASE  mfdb;
+USE filmdb;
 
 DROP TABLE IF EXISTS filme;
 DROP TABLE IF EXISTS genres;
 
-CREATE TABLE filme(
-    FilmeID tinyint(255) AUTO_INCREMENT,
-    Titel varchar(255),
-    Altersfreigabe tinyint(255),
-    Erscheinungsjahr SMALLINT(255),
-    Genre1 varchar(255),
-    Genre2 varchar(255),
-    Genre3 varchar(255),
-    Filmlaenge SMALLINT(255),
-    file varchar(65535),
-    PRIMARY KEY(FilmeID)
+CREATE TABLE filme (
+    FilmeID INT AUTO_INCREMENT PRIMARY KEY,
+    Titel VARCHAR(255) NOT NULL,
+    Altersfreigabe TINYINT,
+    Erscheinungsjahr SMALLINT,
+    Genre1 VARCHAR(255),
+    Genre2 VARCHAR(255),
+    Genre3 VARCHAR(255),
+    Filmlaenge SMALLINT,
+    file TEXT
 );
 
-CREATE TABLE genres(
-    GenreID tinyint(255) AUTO_INCREMENT,
-    GenreName varchar(255),
-    PRIMARY KEY (GenreID)
+CREATE TABLE genres (
+    GenreID INT AUTO_INCREMENT PRIMARY KEY,
+    GenreName VARCHAR(255) NOT NULL
 );
