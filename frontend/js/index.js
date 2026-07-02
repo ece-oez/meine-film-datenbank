@@ -68,7 +68,7 @@ function getMovieDataFromId(pFilmeId) {
     for (let i = 0; i < data.length; i++) {de
         let current = data[i]
 
-        if (current.FilmeId == pFilmeId) {
+        if (current.FilmeID == pFilmeId) {
             return current;
         }
     }
@@ -205,18 +205,19 @@ function fuelleFilmeListe() {
 
         let tr = document.createElement('tr')
         tr.classList.add('movie-entry')
-        tr.dataset.filmeid = zeile.FilmeId;  // fragen??
+        tr.dataset.filmeid = zeile.FilmeID;
         let td1 = document.createElement('td')
         let td2 = document.createElement('td')
-        td1.innerText = zeile.FilmeId;
+        td1.innerText = zeile.FilmeID;
         td2.innerText = zeile.Titel;
 
         tr.appendChild(td1)
         tr.appendChild(td2)
 
         tr.onclick = function () {
-            movieId = zeile.FilmeId;
-            let movieData = getMovieDataFromId(zeile.FilmeId)
+            movieId = zeile.FilmeID;
+            let movieID = zeile.FilmeID;
+            let movieData = getMovieById(movieID)
             // Eingabe Maske füllen
             titel.value = movieData.Titel;
             fsk.value = movieData.Altersfreigabe;
@@ -256,6 +257,28 @@ async function loescheFilm() {
 
     showMessage('http-status: ' + response.status, data.errormessage, response.ok == true ? true : false);
 }
+
+async function getMovieById(movieID) {
+
+    let obj = {
+        'id': movieID
+    }
+
+    let jsn = JSON.stringify(obj);
+
+  let response = await fetch(
+    `http://localhost:8080/api/movies.php?id=${movieID}`
+);
+
+    // Prüfen ob der response 'ok' ist 
+
+    data = await response.json();
+
+    return data;
+
+    showMessage('http-status: ' + response.status, data.errormessage, response.ok == true ? true : false);
+}
+
 
 async function updateFilmeDB() {
 
