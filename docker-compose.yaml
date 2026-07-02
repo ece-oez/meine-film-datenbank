@@ -1,0 +1,46 @@
+version: "3.9"
+
+services:
+
+  backend:
+    build:
+      context: ./backend
+    container_name: filmdb-backend
+
+    ports:
+      - "8080:80"
+
+    volumes:
+      - ./backend:/var/www/html
+
+    depends_on:
+      - mariadb
+
+    environment:
+      DB_HOST: mariadb
+      DB_NAME: filmdb
+      DB_USER: filmdb
+      DB_PASSWORD: secret
+
+  mariadb:
+    image: mariadb:11
+
+    container_name: filmdb-db
+
+    restart: unless-stopped
+
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: filmdb
+      MYSQL_USER: filmdb
+      MYSQL_PASSWORD: secret
+
+    ports:
+      - "3306:3306"
+
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./database:/docker-entrypoint-initdb.d
+
+volumes:
+  db_data:
