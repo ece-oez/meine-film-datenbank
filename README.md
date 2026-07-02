@@ -4,6 +4,10 @@ A full-stack movie database application currently being modernized as part of my
 
 The goal of this project is not only to build a movie database but also to practice modern software engineering concepts such as containerization, CI/CD, cloud deployment, automated testing, and frontend migration.
 
+
+<img src="img"/>
+
+
 ## 🚀 Roadmap
 
 - [x] Dockerize PHP backend
