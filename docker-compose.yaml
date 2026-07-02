@@ -42,5 +42,21 @@ services:
       - db_data:/var/lib/mysql
       - ./database:/docker-entrypoint-initdb.d
 
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: filmdb-phpmyadmin
+
+    restart: unless-stopped
+
+    depends_on:
+      - mariadb
+
+    environment:
+      PMA_HOST: mariadb
+      PMA_PORT: 3306
+
+    ports:
+      - "8081:80"
+
 volumes:
   db_data:
