@@ -2,7 +2,7 @@
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
 
-if($_SERVER['REQUEST_METHOD'] !== 'POST'){
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(403);
     exit();
 }
@@ -29,11 +29,11 @@ $statement->bindParam(1, $parsed['id'], PDO::PARAM_INT);
 $statement->execute();
 
 
-if($statement){
+if ($statement) {
     $data = [
         'errormessage' => "Film wurde erfolgreich geloescht!"
     ];
-}else{
+} else {
     $data = [
         'errormessage' => "Unbekannter Fehler beim Loeschen aufgetreten!"
     ];
@@ -48,4 +48,3 @@ echo json_encode($data);
 // Array zu einem json string machen und zu javascript antworten
 
 $pdo = null;
-?>
