@@ -87,7 +87,7 @@ filmdb/
 ### The Frontend application will be available at:
 
 ```
-Frontend: http://localhost:8080
+http://localhost:80
 ```
 
 ### The Backend application will be available at:
